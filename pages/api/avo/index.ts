@@ -1,7 +1,7 @@
 import { database } from "@database";
-import { ServerResponse, IncomingMessage } from "http";
+import { NextApiRequest, NextApiResponse } from "next";
 
-const findAll = async (req: IncomingMessage, res: Response) => {
+const findAll = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     const data = await database.getAll();
     res.status(200).json(data);
